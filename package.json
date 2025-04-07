@@ -1,0 +1,48 @@
+{
+  "name": "@dr.pogodin/eslint-configs",
+  "version": "0.0.1",
+  "description": "ESLint configurations for TypeScript and/or React projects",
+  "type": "module",
+  "exports": {
+    "./react-ts": "./react-ts.mjs",
+    "./typescript": "./typescript.mjs"
+  },
+  "scripts": {
+    "lint": "eslint -c typescript.mjs",
+    "test": "npm run lint"
+  },
+  "repository": "github:birdofpreyru/eslint-configs",
+  "keywords": [
+    "ESLint",
+    "Config",
+    "React",
+    "TypeScript",
+    "Configuration",
+    "ESLint-Config",
+    "Linter"
+  ],
+  "author": "Dr. Sergey Pogodin <doc@pogodin.studio> (https://dr.pogodin.studio)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/birdofpreyru/eslint-configs/issues"
+  },
+  "homepage": "https://dr.pogodin.studio/docs/eslint-configs",
+  "dependencies": {
+    "@babel/eslint-parser": "^7.26.8",
+    "@babel/eslint-plugin": "^7.25.9",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
+    "@eslint/js": "^9.21.0",
+    "@stylistic/eslint-plugin": "^4.1.0",
+    "eslint": "^9.21.0",
+    "eslint-import-resolver-typescript": "^4.3.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^16.0.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.25.0"
+  }
+}
