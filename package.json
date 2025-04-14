@@ -1,14 +1,14 @@
 {
   "name": "@dr.pogodin/eslint-configs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ESLint configurations for TypeScript and/or React projects",
   "type": "module",
+  "main": "./config/index.js",
   "exports": {
-    "./react-ts": "./react-ts.mjs",
-    "./typescript": "./typescript.mjs"
+    "*": "./config/*.js"
   },
   "scripts": {
-    "lint": "eslint -c typescript.mjs",
+    "lint": "eslint",
     "test": "npm run lint"
   },
   "repository": "github:birdofpreyru/eslint-configs",
@@ -35,14 +35,16 @@
     "@babel/preset-typescript": "^7.26.0",
     "@eslint/js": "^9.21.0",
     "@stylistic/eslint-plugin": "^4.1.0",
-    "eslint": "^9.21.0",
     "eslint-import-resolver-typescript": "^4.3.2",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "globals": "^16.0.0",
     "typescript": "^5.7.0",
-    "typescript-eslint": "^8.25.0"
+    "typescript-eslint": "^8.29.1"
+  },
+  "peerDependencies": {
+    "eslint": "9"
   }
 }
