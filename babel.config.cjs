@@ -2,7 +2,7 @@
 
 // NOTE: For now we keep it CJS, as ES modules support in Babel config is still
 // expertimentary.
-// eslint-disable-next-line import/no-commonjs, import/unambiguous
+// eslint-disable-next-line import/no-commonjs
 module.exports = {
   presets: [
     ['@babel/env', {

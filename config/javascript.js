@@ -1,6 +1,5 @@
 // Base configuration for all JavaScript and TypeScript files.
 
-// eslint-disable-next-line import/no-internal-modules
 import { defineConfig } from 'eslint/config';
 import importPlugin from 'eslint-plugin-import';
 
@@ -45,10 +44,8 @@ export default defineConfig([{
     '@babel/semi': 'error',
 
     // Rules provided by "eslint-plugin-import".
-    'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
     'import/dynamic-import-chunkname': 'error',
     'import/first': 'error',
-    'import/group-exports': 'error',
     'import/newline-after-import': 'error',
     'import/no-absolute-path': 'error',
     'import/no-amd': 'warn',
@@ -58,26 +55,30 @@ export default defineConfig([{
     'import/no-duplicates': 'error',
     'import/no-dynamic-require': 'error',
     'import/no-empty-named-blocks': 'error',
-    'import/no-extraneous-dependencies': 'error',
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: false,
+      optionalDependencies: false,
+    }],
     'import/no-import-module-exports': 'warn',
-    'import/no-internal-modules': 'error',
     'import/no-mutable-exports': 'error',
     'import/no-named-as-default': 'error',
     'import/no-named-as-default-member': 'error',
     'import/no-relative-packages': 'error',
     'import/no-self-import': 'error',
-    'import/no-unassigned-import': 'error',
+    'import/no-unassigned-import': ['error', {
+      allow: ['**/*.css', '**/*.scss'],
+    }],
     'import/no-unused-modules': 'error',
     'import/no-useless-path-segments': 'error',
     'import/no-webpack-loader-syntax': 'error',
-    'import/order': 'error',
-    'import/unambiguous': 'error',
 
     // These rules are provided by "@stylistic/eslint-plugin",
     // and (re-)configured for our taste, somewhat differently from
     // defaults of "@stylistic/recommended".
     '@stylistic/array-bracket-newline': ['error', 'consistent'],
     '@stylistic/array-element-newline': ['error', 'consistent'],
+    '@stylistic/arrow-parens': ['error', 'always'],
+    '@stylistic/brace-style': ['error', '1tbs'],
     '@stylistic/comma-dangle': ['error', 'always-multiline'],
     '@stylistic/curly-newline': ['error', {
       consistent: true,
@@ -88,19 +89,14 @@ export default defineConfig([{
     '@stylistic/function-call-spacing': 'error',
     '@stylistic/function-paren-newline': ['error', 'multiline-arguments'],
     '@stylistic/implicit-arrow-linebreak': 'error',
-
-    // eslint-disable-next-line no-magic-numbers
     '@stylistic/indent': ['error', 2, {
       SwitchCase: 1,
     }],
-
     '@stylistic/jsx-child-element-spacing': 'error',
-    '@stylistic/jsx-newline': ['error', {
-      allowMultilines: true,
-      prevent: true,
+    '@stylistic/jsx-one-expression-per-line': ['error', {
+      allow: 'single-line',
     }],
     '@stylistic/jsx-pascal-case': 'error',
-    '@stylistic/jsx-props-no-multi-spaces': 'error',
     '@stylistic/jsx-self-closing-comp': 'error',
     '@stylistic/jsx-sort-props': 'error',
     '@stylistic/linebreak-style': 'error',
@@ -115,7 +111,12 @@ export default defineConfig([{
       ignoreStrings: true,
       ignoreTemplateLiterals: true,
     }],
-    '@stylistic/multiline-comment-style': ['error', 'separate-lines'],
+    '@stylistic/member-delimiter-style': ['error', {
+      multiline: {
+        delimiter: 'semi',
+        requireLast: true,
+      },
+    }],
     '@stylistic/multiline-ternary': 'off',
     '@stylistic/no-confusing-arrow': 'error',
     '@stylistic/no-extra-parens': ['error', 'all', {
@@ -159,7 +160,7 @@ export default defineConfig([{
     complexity: 'error',
     'consistent-return': 'error',
     'consistent-this': 'error',
-    curly: ['error', 'multi'],
+    curly: ['error', 'multi-line'],
     'default-case': 'error',
     'default-case-last': 'error',
     'default-param-last': 'error',
@@ -180,9 +181,7 @@ export default defineConfig([{
     'no-console': 'error',
     'no-constructor-return': 'error',
     'no-continue': 'error',
-    'no-duplicate-imports': ['error', {
-      includeExports: true,
-    }],
+    'no-duplicate-imports': 'error',
     'no-else-return': 'error',
     'no-empty-function': 'error',
     'no-eq-null': 'error',
@@ -190,7 +189,9 @@ export default defineConfig([{
     'no-extend-native': 'error',
     'no-extra-bind': 'error',
     'no-extra-label': 'error',
-    'no-implicit-coercion': 'error',
+    'no-implicit-coercion': ['error', {
+      boolean: false,
+    }],
     'no-implicit-globals': 'error',
     'no-implied-eval': 'error',
     'no-inner-declarations': ['error', 'both'],
@@ -200,7 +201,6 @@ export default defineConfig([{
     'no-lone-blocks': 'error',
     'no-lonely-if': 'error',
     'no-loop-func': 'error',
-    'no-magic-numbers': 'error',
     'no-multi-assign': 'error',
     'no-multi-str': 'error',
     'no-negated-condition': 'error',
@@ -221,7 +221,6 @@ export default defineConfig([{
     'no-template-curly-in-string': 'error',
     'no-throw-literal': 'error',
     'no-undef-init': 'error',
-    'no-undefined': 'error',
     'no-underscore-dangle': 'error',
     'no-unmodified-loop-condition': 'error',
     'no-unneeded-ternary': 'error',
@@ -235,10 +234,9 @@ export default defineConfig([{
     'no-useless-rename': 'error',
     'no-useless-return': 'error',
     'no-var': 'error',
-    'no-void': 'error',
     'no-warning-comments': 'warn',
     'object-shorthand': 'error',
-    'one-var': 'error',
+    'one-var': ['error', 'never'],
     'operator-assignment': 'error',
     'prefer-arrow-callback': 'error',
     'prefer-const': 'error',
@@ -256,9 +254,6 @@ export default defineConfig([{
     'require-atomic-updates': 'error',
     'require-await': 'error',
     'require-yield': 'error',
-    'sort-imports': ['error', {
-      allowSeparatedGroups: true,
-    }],
     'sort-keys': ['error', 'asc', {
       allowLineSeparatedGroups: true,
     }],

@@ -5,7 +5,8 @@
   "type": "module",
   "main": "./config/index.js",
   "exports": {
-    "*": "./config/*.js"
+    "*": "./config/*.js",
+    "default": "./config/index.js"
   },
   "scripts": {
     "lint": "eslint",

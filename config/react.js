@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-internal-modules
 import { defineConfig } from 'eslint/config';
 
 import jsxA11y from 'eslint-plugin-jsx-a11y';
@@ -8,7 +7,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 export default defineConfig([{
   name: 'dr.pogodin/react',
 
-  extends: [react.configs.recommended, jsxA11y.configs.recommended],
+  extends: [react.configs.flat.recommended, jsxA11y.flatConfigs.recommended],
   files: ['**/*.jsx', '**/*.tsx'],
   languageOptions: {
     parserOptions: {
@@ -18,9 +17,13 @@ export default defineConfig([{
     },
   },
   plugins: {
-    'jsx-a11y': jsxA11y,
     react,
     'react-hooks': reactHooks,
+  },
+  settings: {
+    react: {
+      version: '19',
+    },
   },
 
   rules: {
@@ -51,20 +54,17 @@ export default defineConfig([{
     'react/jsx-first-prop-new-line': ['error', 'multiline'],
     'react/jsx-fragments': 'error',
     'react/jsx-handler-names': 'error',
-    'react/jsx-indent': ['error', 2], // eslint-disable-line no-magic-numbers
-    'react/jsx-indent-props': ['error', 2], // eslint-disable-line no-magic-numbers
+    'react/jsx-indent': ['error', 2],
+    'react/jsx-indent-props': ['error', 2],
     'react/jsx-max-depth': ['warn', { max: 10 }],
-    'react/jsx-newline': ['error', {
-      allowMultilines: true,
-      prevent: true,
+    'react/jsx-no-bind': ['error', {
+      allowArrowFunctions: true,
     }],
-    'react/jsx-no-bind': 'error',
     'react/jsx-no-constructed-context-values': 'error',
     'react/jsx-no-leaked-render': 'error',
     'react/jsx-no-script-url': 'error',
     'react/jsx-no-useless-fragment': 'error',
     'react/jsx-pascal-case': 'error',
-    'react/jsx-props-no-multi-spaces': 'error',
     'react/jsx-props-no-spread-multi': 'error',
     'react/jsx-props-no-spreading': 'error',
     'react/jsx-sort-props': 'error',
@@ -81,13 +81,22 @@ export default defineConfig([{
     'react/no-redundant-should-component-update': 'error',
     'react/no-this-in-sfc': 'error',
     'react/no-typos': 'error',
+    'react/no-unknown-property': ['error', {
+      ignore: ['styleName'],
+    }],
     'react/no-unsafe': 'error',
     'react/no-unstable-nested-components': 'error',
     'react/no-unused-class-component-methods': 'error',
     'react/no-unused-state': 'error',
     'react/no-will-update-set-state': 'error',
-    'react/prefer-read-only-props': 'error',
     'react/prefer-stateless-function': 'error',
+
+    // NOTE: Starting with React 19, propTypes type-checks are deprecated,
+    // and if TypeScript is used (as it is recommended now), it will take care
+    // of prop types validations anyway.
+    'react/prop-types': 'off',
+
+    'react/react-in-jsx-scope': 'off',
     'react/self-closing-comp': 'error',
     'react/sort-comp': 'error',
     'react/style-prop-object': 'error',
@@ -99,7 +108,13 @@ export default defineConfig([{
   },
 }, {
   name: 'dr.pogodin/react/global',
+  plugins: {
+    react,
+  },
   rules: {
-    'react/jsx-filename-extension': 'error',
+    'react/jsx-filename-extension': ['error', {
+      allow: 'as-needed',
+      extensions: ['.jsx', '.tsx'],
+    }],
   },
 }]);
