@@ -83,7 +83,7 @@ This project is invisioned as a replacement for AirBnB ESLint configurations
 This package provides the following base configurations, that are meant to be
 combined and extended as necessary for the needs of host projects.
 
-### configs.javascript
+### `configs.javascript`
 [`configs.javascript`]: #configsjavascript
 
 Intended for JavaScript code, it applies to the files [ESLint] considers as
@@ -105,7 +105,7 @@ them the following rule sets:
   the `recommended` rule set, with minor overrides, and many additional rules
   enabled.
 
-### configs.jest
+### `configs.jest`
 [`configs.jest`]: #configsjest
 
 Intended for [Jest](https://jestjs.io)-based unit test code, it applies to all
@@ -116,7 +116,7 @@ it to); and it applies to them the following rule sets:
   the `recommended` and `style` rule sets, with a bunch of additional rules
   enabled.
 
-### configs.react
+### `configs.react`
 [`configs.react`]: #configsreact
 
 Intended for React code, it applies to `**/*.jsx` and `**/*.tsx` files;
@@ -136,7 +136,7 @@ Additionally, it applies to all other files matched by any other [ESLint]
 configuration object, to forbid using JSX syntax in files with extensions
 different from `.jsx` or `.tsx`.
 
-### configs.typescript
+### `configs.typescript`
 [`configs.typescript`]: #configstypescript
 
 Intended for TypeScript code, it applies to `**/*.ts` and `**/*.tsx` files;
