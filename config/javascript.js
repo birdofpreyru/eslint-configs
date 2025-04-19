@@ -93,9 +93,11 @@ export default defineConfig([{
       SwitchCase: 1,
     }],
     '@stylistic/jsx-child-element-spacing': 'error',
-    '@stylistic/jsx-one-expression-per-line': ['error', {
-      allow: 'single-line',
-    }],
+
+    // This rule is quite annoying at times, better switch it off and let
+    // developer to buitify his code as needed in each situation.
+    '@stylistic/jsx-one-expression-per-line': 'off',
+
     '@stylistic/jsx-pascal-case': 'error',
     '@stylistic/jsx-self-closing-comp': 'error',
     '@stylistic/jsx-sort-props': 'error',
