@@ -34,7 +34,7 @@ This project is invisioned as a replacement for AirBnB ESLint configurations
 
 - Install this package and ESLint as developement dependencies:
   ```sh
-  npm install --save-dev eslint @dr.pogodin/eslint-configs
+  npm install --save-dev @dr.pogodin/eslint-configs
   ```
 
 - Add necessary configurations into your flat ESLint config file, for example
