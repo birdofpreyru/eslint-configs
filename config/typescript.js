@@ -19,6 +19,7 @@ export default tsEsLint.config(
     },
     rules: {
       // TypeScript takes care of the same, in a better way.
+      '@babel/new-cap': 'off',
       '@babel/no-undef': 'off',
 
       // It does not support type imports, and TypeScript itself does necessary
