@@ -28,13 +28,30 @@ This project is invisioned as a replacement for AirBnB ESLint configurations
 ## Getting Started
 [Getting Started]: #getting-started
 
-- We assume that [Babel] is properly installed and configured in the host
-  project &mdash; some plugins we enable depend on that, and as of now we do not
-  provide options to optionally disable them for non-[Babel] host projects.
-
 - Install this package and ESLint as developement dependencies:
   ```sh
   npm install --save-dev @dr.pogodin/eslint-configs
+  ```
+
+- Some plugins & rules we use depend on [Babel]. If you don't have it explicitly
+  installed and configured in your project you should set `requireConfigFile`
+  option of parser to `false`, _e.g._:
+  ```js
+  // eslint.config.mjs
+
+  import { defineConfig } from 'eslint/config';
+  import eslintConfigs from '@dr.pogodin/eslint-configs';
+
+  export default defineConfig([
+    {
+      languageOptions: {
+        parserOptions: {
+          requireConfigFile: false,
+        },
+      },
+    },
+    eslintConfigs.config.javascript,
+  ]);
   ```
 
 - Add necessary configurations into your flat ESLint config file, for example
