@@ -52,6 +52,7 @@ export default tsEsLint.config(
       '@typescript-eslint/no-mixed-enums': 'error',
       '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
       '@typescript-eslint/no-redeclare': 'error',
+      '@typescript-eslint/no-unnecessary-type-conversion': 'error',
 
       // NOTE: The core rule variant reports incorrect errors on TypeScript
       // code, thus disabled.

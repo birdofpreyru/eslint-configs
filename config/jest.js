@@ -39,6 +39,8 @@ export default defineConfig([{
     'jest/prefer-todo': 'error',
     'jest/require-to-throw-message': 'error',
 
+    'no-console': 'off',
+
     '@typescript-eslint/unbound-method': 'off',
   },
 }]);

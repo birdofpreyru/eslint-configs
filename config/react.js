@@ -18,7 +18,6 @@ export default defineConfig([{
   },
   plugins: {
     react,
-    'react-hooks': reactHooks,
   },
   settings: {
     react: {
@@ -101,20 +100,33 @@ export default defineConfig([{
     'react/sort-comp': 'error',
     'react/style-prop-object': 'error',
     'react/void-dom-elements-no-children': 'error',
-
-    // Rules provided by eslint-plugin-react-hooks.
-    'react-hooks/exhaustive-deps': 'error',
-    'react-hooks/rules-of-hooks': 'error',
+  },
+}, {
+  files: ['**/*.jsx'],
+  name: 'dr.pogodin/react/jsx',
+  rules: {
+    // This is our preferred naming scheme for pure JSX code (i.e., non-TypeScript).
+    'react/function-component-definition': ['error', {
+      namedComponents: 'function-declaration',
+      unnamedComponents: 'arrow-function',
+    }],
   },
 }, {
   name: 'dr.pogodin/react/global',
   plugins: {
     react,
+    'react-hooks': reactHooks,
   },
   rules: {
     'react/jsx-filename-extension': ['error', {
       allow: 'as-needed',
       extensions: ['.jsx', '.tsx'],
     }],
+
+    // Rules provided by eslint-plugin-react-hooks; they should be applied to
+    // all files, as hooks do not have to live exclusively in .jsx / .tsx files
+    // alongside JSX syntax!
+    'react-hooks/exhaustive-deps': 'error',
+    'react-hooks/rules-of-hooks': 'error',
   },
 }]);

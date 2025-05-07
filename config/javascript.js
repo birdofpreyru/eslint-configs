@@ -212,7 +212,9 @@ export default defineConfig([{
     'no-new-wrappers': 'error',
     'no-object-constructor': 'error',
     'no-octal-escape': 'error',
-    'no-param-reassign': 'error',
+    'no-param-reassign': ['error', {
+      props: true,
+    }],
     'no-promise-executor-return': 'error',
     'no-proto': 'error',
     'no-return-assign': 'error',
