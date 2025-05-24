@@ -224,6 +224,7 @@ export default defineConfig([{
     'no-shadow': 'error',
     'no-template-curly-in-string': 'error',
     'no-throw-literal': 'error',
+    'no-unassigned-vars': 'error',
     'no-undef-init': 'error',
     'no-underscore-dangle': 'error',
     'no-unmodified-loop-condition': 'error',
