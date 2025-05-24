@@ -71,6 +71,7 @@ export default defineConfig([{
     'import/no-unused-modules': 'error',
     'import/no-useless-path-segments': 'error',
     'import/no-webpack-loader-syntax': 'error',
+    'import/order': 'error',
 
     // These rules are provided by "@stylistic/eslint-plugin",
     // and (re-)configured for our taste, somewhat differently from
