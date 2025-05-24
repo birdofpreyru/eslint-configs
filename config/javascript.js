@@ -71,7 +71,9 @@ export default defineConfig([{
     'import/no-unused-modules': 'error',
     'import/no-useless-path-segments': 'error',
     'import/no-webpack-loader-syntax': 'error',
-    'import/order': 'error',
+    'import/order': ['error', {
+      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+    }],
 
     // These rules are provided by "@stylistic/eslint-plugin",
     // and (re-)configured for our taste, somewhat differently from
@@ -260,9 +262,17 @@ export default defineConfig([{
     'require-atomic-updates': 'error',
     'require-await': 'error',
     'require-yield': 'error',
+
+    // TODO: Disabled for now, as there is one thing I don't like about it:
+    // in TypeScript it sorts type imports together with other imported members,
+    // while I'd prefer to have all type member imports first, followed by other
+    // imported members after.
+    /*
     'sort-imports': ['error', {
       ignoreDeclarationSort: true,
     }],
+    */
+
     'sort-keys': ['error', 'asc', {
       allowLineSeparatedGroups: true,
     }],
