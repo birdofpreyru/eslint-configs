@@ -259,6 +259,9 @@ export default defineConfig([{
     'require-atomic-updates': 'error',
     'require-await': 'error',
     'require-yield': 'error',
+    'sort-imports': ['error', {
+      ignoreDeclarationSort: true,
+    }],
     'sort-keys': ['error', 'asc', {
       allowLineSeparatedGroups: true,
     }],
