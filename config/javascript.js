@@ -45,6 +45,7 @@ export default defineConfig([{
 
     // Rules provided by "eslint-plugin-import".
     'import/dynamic-import-chunkname': 'error',
+    'import/enforce-node-protocol-usage': ['error', 'always'],
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-absolute-path': 'error',
