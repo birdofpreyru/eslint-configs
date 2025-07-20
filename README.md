@@ -66,32 +66,26 @@ This project is invisioned as a replacement for AirBnB ESLint configurations
 
   import eslintConfigs from '@dr.pogodin/react-utils';
 
-  export default defineConfig([{
-    // Global ignore rules: an array of path patterns to be ignored by ESLint
-    // for all other objects included into this configuration, in addition to
-    // "**/node_modules/" and ".git/" paths which are always ignored; see:
-    // https://eslint.org/docs/latest/use/configure/configuration-files#globally-ignoring-files-with-ignores 
-    ignores: ['build/'],
-  }, {
-    // This object opts-in for JavaScript, TypeScript, and React code checks
-    // inside the project, with exception for a folder with tests, which is
-    // checked by different rules below.
-    extends: [
-      eslintConfigs.configs.javascript,
-      eslintConfigs.configs.typescript,
-      eslintConfigs.configs.react,
-    ],
-    ignores: ['__tests__/**'],
-  }, {
-    // This is a separate set of rules for a folder with Jest-based unit tests.
-    extends: [
-      eslintConfigs.configs.javascript,
-      eslintConfigs.configs.typescript,
-      eslintConfigs.configs.react,
-      eslintConfigs.configs.jest,
-    ],
-    files: ['__tests__/**'],
-  }]);
+  export default defineConfig([
+    {
+      // Global ignore rules: an array of path patterns to be ignored by ESLint
+      // for all other objects included into this configuration, in addition to
+      // "**/node_modules/" and ".git/" paths which are always ignored; see:
+      // https://eslint.org/docs/latest/use/configure/configuration-files#globally-ignoring-files-with-ignores 
+      ignores: ['build/'],
+    },
+    // Apply JavaScript, TypeScript, and React configs to all files matched by
+    // those configs by default.
+    eslintConfigs.configs.javascript,
+    eslintConfigs.configs.typescript,
+    eslintConfigs.configs.react,
+    {
+      // Additionally apply Jest config to the folder with Jest-based unit
+      // tests.
+      extends: [eslintConfigs.configs.jest],
+      files: ['__tests__/**'],
+    },
+  ]);
   ```
 
 ## Provided Configs
