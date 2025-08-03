@@ -52,7 +52,6 @@ export default defineConfig([{
     'react/jsx-equals-spacing': 'error',
     'react/jsx-first-prop-new-line': ['error', 'multiline'],
     'react/jsx-fragments': 'error',
-    'react/jsx-handler-names': 'error',
     'react/jsx-indent': ['error', 2],
     'react/jsx-indent-props': ['error', 2],
     'react/jsx-max-depth': ['warn', { max: 10 }],
