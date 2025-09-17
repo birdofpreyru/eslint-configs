@@ -126,8 +126,11 @@ export default defineConfig([{
     '@stylistic/multiline-ternary': 'off',
     '@stylistic/no-confusing-arrow': 'error',
     '@stylistic/no-extra-parens': ['error', 'all', {
-      enforceForArrowConditionals: false,
       ignoreJSX: 'multi-line',
+      ignoredNodes: [
+        // NOTE: Replaces the deprecated "enforceForArrowConditionals": option.
+        'ArrowFunctionExpression[body.type=ConditionalExpression]',
+      ],
       nestedBinaryExpressions: false,
       returnAssign: false,
     }],
