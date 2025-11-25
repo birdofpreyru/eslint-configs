@@ -65,6 +65,11 @@ export default tsEsLint.config(
       '@typescript-eslint/no-unnecessary-qualifier': 'error',
       '@typescript-eslint/no-unnecessary-template-expression': 'error',
       '@typescript-eslint/no-unnecessary-type-arguments': 'error',
+
+      // NOTE: Disables the base rule as it can report incorrect errors.
+      '@typescript-eslint/no-unused-private-class-members': 'error',
+      'no-unused-private-class-members': 'off',
+
       '@typescript-eslint/no-use-before-define': 'error',
       '@typescript-eslint/no-useless-constructor': 'error',
       '@typescript-eslint/no-useless-empty-export': 'error',

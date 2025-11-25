@@ -38,6 +38,7 @@ export default defineConfig([{
     'jest/prefer-strict-equal': 'error',
     'jest/prefer-todo': 'error',
     'jest/require-to-throw-message': 'error',
+    'jest/valid-mock-module-path': 'error',
 
     'no-console': 'off',
 
