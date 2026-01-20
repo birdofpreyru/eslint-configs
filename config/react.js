@@ -29,7 +29,9 @@ export default defineConfig([{
 
   rules: {
     // Rules provided by "eslint-plugin-perfectionist"
-    'perfectionist/sort-jsx-props': 'error',
+    'perfectionist/sort-jsx-props': ['error', {
+      type: 'natural',
+    }],
 
     // Rules provided by "eslint-plugin-jsx-a11y".
     'jsx-a11y/anchor-ambiguous-text': 'error',
