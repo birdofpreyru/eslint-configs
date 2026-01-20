@@ -104,7 +104,6 @@ export default defineConfig([{
 
     '@stylistic/jsx-pascal-case': 'error',
     '@stylistic/jsx-self-closing-comp': 'error',
-    '@stylistic/jsx-sort-props': 'error',
     '@stylistic/linebreak-style': 'error',
     '@stylistic/lines-around-comment': ['error', {
       allowBlockStart: true,

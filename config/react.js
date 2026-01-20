@@ -1,6 +1,7 @@
 import { defineConfig } from 'eslint/config';
 
 import jsxA11y from 'eslint-plugin-jsx-a11y';
+import perfectionist from 'eslint-plugin-perfectionist';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 
@@ -17,6 +18,7 @@ export default defineConfig([{
     },
   },
   plugins: {
+    perfectionist,
     react,
   },
   settings: {
@@ -26,6 +28,9 @@ export default defineConfig([{
   },
 
   rules: {
+    // Rules provided by "eslint-plugin-perfectionist"
+    'perfectionist/sort-jsx-props': 'error',
+
     // Rules provided by "eslint-plugin-jsx-a11y".
     'jsx-a11y/anchor-ambiguous-text': 'error',
     'jsx-a11y/control-has-associated-label': 'error',
@@ -65,7 +70,6 @@ export default defineConfig([{
     'react/jsx-pascal-case': 'error',
     'react/jsx-props-no-spread-multi': 'error',
     'react/jsx-props-no-spreading': 'error',
-    'react/jsx-sort-props': 'error',
     'react/jsx-tag-spacing': 'error',
     'react/no-access-state-in-setstate': 'error',
     'react/no-array-index-key': 'error',

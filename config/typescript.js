@@ -91,6 +91,7 @@ export default tsEsLint.config(
       '@typescript-eslint/promise-function-async': 'error',
       '@typescript-eslint/related-getter-setter-pairs': 'error',
       '@typescript-eslint/require-array-sort-compare': 'error',
+      '@typescript-eslint/strict-void-return': 'error',
       '@typescript-eslint/switch-exhaustiveness-check': 'error',
       '@typescript-eslint/typedef': 'error',
       '@typescript-eslint/unified-signatures': 'error',
