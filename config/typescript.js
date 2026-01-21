@@ -1,8 +1,9 @@
+import { defineConfig } from 'eslint/config';
 import tsEsLint from 'typescript-eslint';
 
 import jsConfig from './javascript.js';
 
-export default tsEsLint.config(
+export default defineConfig(
   {
     name: 'dr.pogodin/typescript',
 
