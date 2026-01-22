@@ -1,7 +1,6 @@
 import { defineConfig } from 'eslint/config';
 
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-import perfectionist from 'eslint-plugin-perfectionist';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 
@@ -18,7 +17,6 @@ export default defineConfig([{
     },
   },
   plugins: {
-    perfectionist,
     react,
   },
   settings: {
@@ -28,14 +26,6 @@ export default defineConfig([{
   },
 
   rules: {
-    // Rules provided by "eslint-plugin-perfectionist"
-    // NOTE: Not necessary when default JS config is used, which already
-    // includes it... but we keep it around to avoid any changes for consumers
-    // who may include this config without our default JS/TS one.
-    'perfectionist/sort-jsx-props': ['error', {
-      type: 'natural',
-    }],
-
     // Rules provided by "eslint-plugin-jsx-a11y".
     'jsx-a11y/anchor-ambiguous-text': 'error',
     'jsx-a11y/control-has-associated-label': 'error',

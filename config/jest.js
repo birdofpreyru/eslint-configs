@@ -17,9 +17,7 @@ export default defineConfig([{
     'jest/no-conditional-in-test': 'error',
     'jest/no-confusing-set-timeout': 'error',
     'jest/no-duplicate-hooks': 'error',
-    'jest/no-error-equal': 'error',
     'jest/no-test-return-statement': 'error',
-    'jest/no-unnecessary-assertion': 'error',
     'jest/no-unneeded-async-expect-function': 'error',
     'jest/no-untyped-mock-factory': 'error',
     'jest/padding-around-after-all-blocks': 'error',
@@ -44,11 +42,22 @@ export default defineConfig([{
     'jest/prefer-to-have-been-called-times': 'error',
     'jest/prefer-todo': 'error',
     'jest/require-to-throw-message': 'error',
-    'jest/valid-expect-with-promise': 'error',
     'jest/valid-mock-module-path': 'error',
 
     'no-console': 'off',
 
     '@typescript-eslint/unbound-method': 'off',
+  },
+}, {
+  // NOTE: These rules require type information, hence they are applied for TS
+  // files only.
+  names: 'dr.pogodin/jest/typescript',
+
+  files: ['**/ts', '**/tsx'],
+  plugins: { jest: pluginJest },
+  rules: {
+    'jest/no-error-equal': 'error',
+    'jest/no-unnecessary-assertion': 'error',
+    'jest/valid-expect-with-promise': 'error',
   },
 }]);

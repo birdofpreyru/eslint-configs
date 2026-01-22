@@ -100,8 +100,10 @@ combined and extended as necessary for the needs of host projects.
 [`configs.javascript`]: #configsjavascript
 
 Intended for JavaScript code, it applies to the files [ESLint] considers as
-JavaScript by default: `**/*.js`, `**/*.cjs`, `**/*.mjs`; and it applies to
-them the following rule sets:
+JavaScript by default: `**/*.js`, `**/*.cjs`, `**/*.mjs`, as well as to any
+other files matched by other config objects in your config (_i.e._ it does not
+include `files` key, see [ESLint docs for related configuration details](https://eslint.org/docs/latest/use/configure/configuration-files#specifying-files-and-ignores));
+and it applies to them the following rule sets:
 
 - [ESLint Core Rules](https://eslint.org/docs/latest/rules) &mdash;
   the `recommended` rule set, with minor overrides, and many additional rules
