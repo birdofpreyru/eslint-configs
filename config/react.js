@@ -29,6 +29,9 @@ export default defineConfig([{
 
   rules: {
     // Rules provided by "eslint-plugin-perfectionist"
+    // NOTE: Not necessary when default JS config is used, which already
+    // includes it... but we keep it around to avoid any changes for consumers
+    // who may include this config without our default JS/TS one.
     'perfectionist/sort-jsx-props': ['error', {
       type: 'natural',
     }],

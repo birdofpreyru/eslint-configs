@@ -2,32 +2,22 @@
 
 import { defineConfig } from 'eslint/config';
 import importPlugin from 'eslint-plugin-import';
+import perfectionist from 'eslint-plugin-perfectionist';
+import { Alphabet } from 'eslint-plugin-perfectionist/alphabet';
 
 import babelParser from '@babel/eslint-parser';
 import babelPlugin from '@babel/eslint-plugin';
 import js from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 
-export default defineConfig([{
-  extends: [
+function newConfig({ noPerf } = {}) {
+  const extentions = [
     'js/recommended',
     '@stylistic/recommended',
     importPlugin.flatConfigs.recommended,
-  ],
-  languageOptions: {
-    parser: babelParser,
-  },
-  linterOptions: {
-    reportUnusedDisableDirectives: 'error',
-    reportUnusedInlineConfigs: 'error',
-  },
-  name: 'dr.pogodin/javascript',
-  plugins: {
-    '@babel': babelPlugin,
-    '@stylistic': stylisticPlugin,
-    js,
-  },
-  rules: {
+  ];
+
+  const rules = {
     // These rules are provided by "@babel/eslint-plugin", and they require
     // to disable (to not enable) their counterparts from ESLint core.
     '@babel/new-cap': 'error',
@@ -72,9 +62,6 @@ export default defineConfig([{
     'import/no-unused-modules': 'error',
     'import/no-useless-path-segments': 'error',
     'import/no-webpack-loader-syntax': 'error',
-    'import/order': ['error', {
-      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-    }],
 
     // These rules are provided by "@stylistic/eslint-plugin",
     // and (re-)configured for our taste, somewhat differently from
@@ -265,28 +252,71 @@ export default defineConfig([{
     'require-atomic-updates': 'error',
     'require-await': 'error',
     'require-yield': 'error',
-
-    // TODO: Disabled for now, as there is one thing I don't like about it:
-    // in TypeScript it sorts type imports together with other imported members,
-    // while I'd prefer to have all type member imports first, followed by other
-    // imported members after.
-    /*
-    'sort-imports': ['error', {
-      ignoreDeclarationSort: true,
-    }],
-    */
-
-    'sort-keys': ['error', 'asc', {
-      allowLineSeparatedGroups: true,
-    }],
     'symbol-description': 'error',
     'unicode-bom': 'error',
     yoda: 'error',
-  },
-  settings: {
+  };
+
+  const settings = {
     'import/resolver': {
       node: true,
       typescript: true,
     },
-  },
-}]);
+  };
+
+  if (noPerf) {
+    // Without Perfectionist. These rules are similar to those Perfectionist
+    // provides, but they are provided by other plugins, and we used them in
+    // older config versions, thus we keep enabling them for the legacy,
+    // "no Perfectionist" config variant.
+    rules['import/order'] = ['error', {
+      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+    }];
+    rules['sort-keys'] = ['error', 'asc', {
+      allowLineSeparatedGroups: true,
+    }];
+  } else {
+    // With Perfectionist.
+    // eslint-disable-next-line import/no-named-as-default-member
+    extentions.push(perfectionist.configs['recommended-custom']);
+
+    // TODO: For now it is disabled because of the following Perfectionist bug:
+    // https://github.com/azat-io/eslint-plugin-perfectionist/issues/688
+    // and we'll keep using "import/order" rule here until the issue is addressed.
+    rules['perfectionist/sort-imports'] = 'off';
+    rules['import/order'] = ['error', {
+      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+    }];
+
+    settings.perfectionist = {
+      alphabet: Alphabet.generateRecommendedAlphabet()
+        .placeAllWithCaseBeforeAllWithOtherCase('uppercase')
+        .getCharacters(),
+      ignoreCase: false,
+      partitionByNewLine: true,
+    };
+  }
+
+  return defineConfig([{
+    extends: extentions,
+    languageOptions: {
+      parser: babelParser,
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
+      reportUnusedInlineConfigs: 'error',
+    },
+    name: 'dr.pogodin/javascript',
+    plugins: {
+      '@babel': babelPlugin,
+      '@stylistic': stylisticPlugin,
+      js,
+    },
+    rules,
+    settings,
+  }]);
+}
+
+export const javascriptNoPerf = newConfig({ noPerf: true });
+
+export default newConfig();

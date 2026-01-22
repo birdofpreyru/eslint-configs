@@ -21,9 +21,11 @@ This project is invisioned as a replacement for AirBnB ESLint configurations
 - [Getting Started]
 - [Provided Configs]
   - [`configs.javascript`]
+  - [`configs.javascriptNoPerf`]
   - [`configs.jest`]
   - [`configs.react`]
   - [`configs.typescript`]
+  - [`configs.typescriptNoPerf`]
 
 ## Getting Started
 [Getting Started]: #getting-started
@@ -116,6 +118,18 @@ them the following rule sets:
   the `recommended` rule set, with minor overrides, and many additional rules
   enabled.
 
+- [Perfectionist] &mdash; the recommended rule set, with minor overrides,
+  such as the custom alphabet that places uppercase characters before lowercase
+  ones, and allowance to use empty lines to separate entities into different
+  sorting groups.
+
+### `configs.javascriptNoPerf`
+[`configs.javascriptNoPerf`]: #configsjavascriptnoperf
+
+The same as [`configs.javascript`] above, but without [Perfectionist] rules.
+Essentially, it is equivalent to [`configs.javascript`] from this library prior
+to its [v0.2.0](https://github.com/birdofpreyru/eslint-configs/releases/tag/v0.2.0) release.
+
 ### `configs.jest`
 [`configs.jest`]: #configsjest
 
@@ -162,6 +176,14 @@ and it applies to them the following rule sets:
   the `recommendedTypeChecked` and `stylisticTypeChecked` rule sets, with minor
   overrides, and many additional rules enabled.
 
+### `configs.typescriptNoPerf`
+[`configs.typescriptNoPerf`]: #configstypescriptnoperf
+
+The same as [`configs.typescript`] above, but without [Perfectionist] rules.
+Essentially, it is equivalent to [`configs.typescript`] from this library prior
+to its [v0.2.0](https://github.com/birdofpreyru/eslint-configs/releases/tag/v0.2.0) release.
+
 [Babel]: https://babeljs.io
 [ESLint]: https://eslint.org
 [eslint-config-airbnb]: https://www.npmjs.com/package/eslint-config-airbnb
+[Perfectionist]: https://perfectionist.dev
