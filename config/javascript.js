@@ -2,6 +2,7 @@
 
 import { defineConfig } from 'eslint/config';
 import importPlugin from 'eslint-plugin-import';
+
 import perfectionist from 'eslint-plugin-perfectionist';
 import { Alphabet } from 'eslint-plugin-perfectionist/alphabet';
 
@@ -280,19 +281,14 @@ function newConfig({ noPerf } = {}) {
     // eslint-disable-next-line import/no-named-as-default-member
     extentions.push(perfectionist.configs['recommended-custom']);
 
-    // TODO: For now it is disabled because of the following Perfectionist bug:
-    // https://github.com/azat-io/eslint-plugin-perfectionist/issues/688
-    // and we'll keep using "import/order" rule here until the issue is addressed.
-    rules['perfectionist/sort-imports'] = 'off';
-    rules['import/order'] = ['error', {
-      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-    }];
-
     settings.perfectionist = {
       alphabet: Alphabet.generateRecommendedAlphabet()
         .placeAllWithCaseBeforeAllWithOtherCase('uppercase')
+        .placeCharacterBefore({ characterAfter: '-', characterBefore: '/' })
         .getCharacters(),
       ignoreCase: false,
+      newlinesBetween: 'ignore',
+      newlinesInside: 'ignore',
       partitionByNewLine: true,
     };
   }
