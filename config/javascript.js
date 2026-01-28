@@ -281,11 +281,14 @@ function newConfig({ noPerf } = {}) {
     // eslint-disable-next-line import/no-named-as-default-member
     extentions.push(perfectionist.configs['recommended-custom']);
 
+    const alphabet = Alphabet.generateRecommendedAlphabet()
+      .sortByNaturalSort()
+      .placeAllWithCaseBeforeAllWithOtherCase('uppercase')
+      .placeCharacterBefore({ characterAfter: '-', characterBefore: '/' })
+      .getCharacters();
+
     settings.perfectionist = {
-      alphabet: Alphabet.generateRecommendedAlphabet()
-        .placeAllWithCaseBeforeAllWithOtherCase('uppercase')
-        .placeCharacterBefore({ characterAfter: '-', characterBefore: '/' })
-        .getCharacters(),
+      alphabet,
       ignoreCase: false,
       newlinesBetween: 'ignore',
       newlinesInside: 'ignore',
