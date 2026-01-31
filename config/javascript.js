@@ -11,7 +11,7 @@ import babelPlugin from '@babel/eslint-plugin';
 import js from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 
-function newConfig({ noPerf } = {}) {
+export function newJsConfig({ noPerf } = {}) {
   const extentions = [
     'js/recommended',
     '@stylistic/recommended',
@@ -335,6 +335,6 @@ function newConfig({ noPerf } = {}) {
   }]);
 }
 
-export const javascriptNoPerf = newConfig({ noPerf: true });
+export const javascriptNoPerf = newJsConfig({ noPerf: true });
 
-export default newConfig();
+export default newJsConfig();

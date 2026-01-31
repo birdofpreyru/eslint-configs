@@ -1,6 +1,6 @@
 {
   "name": "@dr.pogodin/eslint-configs",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "ESLint configurations for TypeScript and/or React projects",
   "type": "module",
   "main": "./config/index.js",
@@ -31,7 +31,7 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.28.6",
     "@babel/eslint-plugin": "^7.27.1",
-    "@babel/preset-env": "^7.28.6",
+    "@babel/preset-env": "^7.29.0",
     "@babel/preset-react": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
     "@eslint/js": "^9.39.2",

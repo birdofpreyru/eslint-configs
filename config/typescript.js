@@ -1,9 +1,18 @@
 import { defineConfig } from 'eslint/config';
 import tsEsLint from 'typescript-eslint';
 
-import jsConfig, { javascriptNoPerf } from './javascript.js';
+import { javascriptNoPerf, newJsConfig } from './javascript.js';
 
 function newConfig({ noPerf } = {}) {
+  const jsConfig = newJsConfig();
+
+  // TODO: It is not the best way to modify this rule's settings,
+  // it will be better to expose this as an option of newJsConfig()
+  // function.
+  jsConfig[0].rules['perfectionist/sort-imports'][1].tsconfig = {
+    rootDir: '.',
+  };
+
   let extentions = [
     jsConfig,
     tsEsLint.configs.recommendedTypeChecked,
