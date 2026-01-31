@@ -1,19 +1,17 @@
 import { defineConfig } from 'eslint/config';
 import tsEsLint from 'typescript-eslint';
 
-import { javascriptNoPerf, newJsConfig } from './javascript.js';
+import { newJsConfig } from './javascript.js';
 
 function newConfig({ noPerf } = {}) {
-  const jsConfig = newJsConfig();
+  const jsConfig = newJsConfig({
+    noPerf,
+    perfectionistTsConfig: {
+      rootDir: '.',
+    },
+  });
 
-  // TODO: It is not the best way to modify this rule's settings,
-  // it will be better to expose this as an option of newJsConfig()
-  // function.
-  jsConfig[0].rules['perfectionist/sort-imports'][1].tsconfig = {
-    rootDir: '.',
-  };
-
-  let extentions = [
+  const extentions = [
     jsConfig,
     tsEsLint.configs.recommendedTypeChecked,
     tsEsLint.configs.stylisticTypeChecked,
@@ -100,11 +98,7 @@ function newConfig({ noPerf } = {}) {
     '@typescript-eslint/use-unknown-in-catch-callback-variable': 'error',
   };
 
-  if (noPerf) {
-    extentions = [javascriptNoPerf, ...extentions];
-  } else {
-    extentions = [jsConfig, ...extentions];
-
+  if (!noPerf) {
     rules['adjacent-overload-signatures'] = 'off';
   }
 

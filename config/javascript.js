@@ -11,7 +11,10 @@ import babelPlugin from '@babel/eslint-plugin';
 import js from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 
-export function newJsConfig({ noPerf } = {}) {
+export function newJsConfig({
+  noPerf,
+  perfectionistTsConfig,
+} = {}) {
   const extentions = [
     'js/recommended',
     '@stylistic/recommended',
@@ -296,7 +299,7 @@ export function newJsConfig({ noPerf } = {}) {
       partitionByNewLine: true,
     };
 
-    rules['perfectionist/sort-imports'] = ['error', {
+    const sortImporsOptions = {
       alphabet,
       groups: [
         'builtin',
@@ -312,7 +315,13 @@ export function newJsConfig({ noPerf } = {}) {
       newlinesInside: 'ignore',
       partitionByNewLine: false,
       type: 'custom',
-    }];
+    };
+
+    if (perfectionistTsConfig) {
+      sortImporsOptions.tsconfig = perfectionistTsConfig;
+    }
+
+    rules['perfectionist/sort-imports'] = ['error', sortImporsOptions];
   }
 
   return defineConfig([{
