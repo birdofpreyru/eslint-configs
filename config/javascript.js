@@ -24,8 +24,8 @@ function newConfig({ noPerf } = {}) {
     '@babel/new-cap': 'error',
     '@babel/no-invalid-this': 'error',
 
-    '@babel/no-undef': 'error',
     'no-undef': 'off',
+    '@babel/no-undef': 'error',
 
     '@babel/no-unused-expressions': 'error',
 
@@ -285,6 +285,7 @@ function newConfig({ noPerf } = {}) {
       .sortByNaturalSort()
       .placeAllWithCaseBeforeAllWithOtherCase('uppercase')
       .placeCharacterBefore({ characterAfter: '-', characterBefore: '/' })
+      .placeCharacterAfter({ characterAfter: '@', characterBefore: 'z' })
       .getCharacters();
 
     settings.perfectionist = {
@@ -294,6 +295,23 @@ function newConfig({ noPerf } = {}) {
       newlinesInside: 'ignore',
       partitionByNewLine: true,
     };
+
+    rules['perfectionist/sort-imports'] = ['error', {
+      alphabet,
+      groups: [
+        'builtin',
+        'external',
+        'internal',
+        'parent',
+        'sibling',
+        'index',
+        'unknown',
+      ],
+      newlinesBetween: 1,
+      newlinesInside: 'ignore',
+      partitionByNewLine: false,
+      type: 'custom',
+    }];
   }
 
   return defineConfig([{
@@ -307,9 +325,9 @@ function newConfig({ noPerf } = {}) {
     },
     name: 'dr.pogodin/javascript',
     plugins: {
+      js,
       '@babel': babelPlugin,
       '@stylistic': stylisticPlugin,
-      js,
     },
     rules,
     settings,

@@ -50,8 +50,8 @@ function newConfig({ noPerf } = {}) {
 
     // NOTE: The core rule variant reports incorrect errors on TypeScript
     // code, thus disabled.
-    '@typescript-eslint/no-shadow': 'error',
     'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
 
     '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
     '@typescript-eslint/no-unnecessary-condition': 'error',
@@ -61,8 +61,8 @@ function newConfig({ noPerf } = {}) {
     '@typescript-eslint/no-unnecessary-type-arguments': 'error',
 
     // NOTE: Disables the base rule as it can report incorrect errors.
-    '@typescript-eslint/no-unused-private-class-members': 'error',
     'no-unused-private-class-members': 'off',
+    '@typescript-eslint/no-unused-private-class-members': 'error',
 
     '@typescript-eslint/no-use-before-define': 'error',
     '@typescript-eslint/no-useless-constructor': 'error',
@@ -73,8 +73,8 @@ function newConfig({ noPerf } = {}) {
 
     // NOTE: The core variant of this rule, disabled below, does not work
     // correctly for TypeScript code in some edge cases.
-    '@typescript-eslint/prefer-destructuring': 'error',
     'prefer-destructuring': 'off',
+    '@typescript-eslint/prefer-destructuring': 'error',
 
     '@typescript-eslint/prefer-enum-initializers': 'error',
     '@typescript-eslint/prefer-literal-enum-member': 'error',
