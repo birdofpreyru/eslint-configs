@@ -305,6 +305,7 @@ function newConfig({ noPerf } = {}) {
         'parent',
         'sibling',
         'index',
+        'style',
         'unknown',
       ],
       newlinesBetween: 1,
