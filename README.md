@@ -30,7 +30,7 @@ This project is invisioned as a replacement for AirBnB ESLint configurations
 ## Getting Started
 [Getting Started]: #getting-started
 
-- Install this package and ESLint as developement dependencies:
+- Install this package as developement dependency:
   ```sh
   npm install --save-dev @dr.pogodin/eslint-configs
   ```
@@ -89,6 +89,11 @@ This project is invisioned as a replacement for AirBnB ESLint configurations
     },
   ]);
   ```
+
+- [Perfectionist] rules included into our default JavaScript and TypeScript
+  configs make the linting noticeably slow (compared to linting without these
+  rules). Consider using [--cache](https://eslint.org/docs/latest/use/command-line-interface#--cache)
+  option of ESLint to speed-up repeated linting of your codebase.
 
 ## Provided Configs
 [Provided Configs]: #provided-configs
