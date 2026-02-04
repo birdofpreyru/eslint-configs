@@ -301,13 +301,34 @@ export function newJsConfig({
 
     const sortImporsOptions = {
       alphabet,
+      customGroups: [{
+        elementNamePattern: [
+          '^\\..*\\.png$',
+          '^\\..*\\.svg$',
+        ],
+        groupName: 'local-asset',
+      }, {
+        elementNamePattern: [
+          '\\.png$',
+          '\\.svg$',
+        ],
+        groupName: 'asset',
+      }, {
+        elementNamePattern: [
+          '^[^.].*\\.scss',
+        ],
+        groupName: 'aliased-style',
+      }],
       groups: [
         'builtin',
         'external',
         'internal',
+        'asset',
+        'aliased-style',
         'parent',
         'sibling',
         'index',
+        'local-asset',
         'style',
         'unknown',
       ],
