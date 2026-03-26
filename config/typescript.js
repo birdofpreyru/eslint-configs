@@ -65,7 +65,12 @@ function newConfig({ noPerf } = {}) {
     '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'error',
     '@typescript-eslint/no-unnecessary-qualifier': 'error',
     '@typescript-eslint/no-unnecessary-template-expression': 'error',
-    '@typescript-eslint/no-unnecessary-type-arguments': 'error',
+
+    // TODO: It is temporary disabled, as it now reports a lot of false
+    // positives, after a regression in TypeScript Eslint, see:
+    // https://github.com/birdofpreyru/eslint-configs/issues/22
+    // https://github.com/typescript-eslint/typescript-eslint/issues/12158
+    '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
 
     // NOTE: Disables the base rule as it can report incorrect errors.
     'no-unused-private-class-members': 'off',
