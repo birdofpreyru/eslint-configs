@@ -70,7 +70,7 @@ function newConfig({ noPerf } = {}) {
     // positives, after a regression in TypeScript Eslint, see:
     // https://github.com/birdofpreyru/eslint-configs/issues/22
     // https://github.com/typescript-eslint/typescript-eslint/issues/12158
-    '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
+    '@typescript-eslint/no-unnecessary-type-arguments': 'off',
 
     // NOTE: Disables the base rule as it can report incorrect errors.
     'no-unused-private-class-members': 'off',
