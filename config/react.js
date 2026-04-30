@@ -109,37 +109,13 @@ export default defineConfig([{
       unnamedComponents: 'arrow-function',
     }],
   },
-}, {
+}, reactHooks.configs.flat.recommended, {
   name: 'dr.pogodin/react/global',
-  plugins: {
-    react,
-    'react-hooks': reactHooks,
-  },
+  plugins: { react },
   rules: {
     'react/jsx-filename-extension': ['error', {
       allow: 'as-needed',
       extensions: ['.jsx', '.tsx'],
     }],
-
-    // Rules provided by eslint-plugin-react-hooks; they should be applied to
-    // all files, as hooks do not have to live exclusively in .jsx / .tsx files
-    // alongside JSX syntax!
-    'react-hooks/component-hook-factories': 'error',
-    'react-hooks/config': 'error',
-    'react-hooks/error-boundaries': 'error',
-    'react-hooks/exhaustive-deps': 'error',
-    'react-hooks/gating': 'error',
-    'react-hooks/globals': 'error',
-    'react-hooks/immutability': 'error',
-    'react-hooks/incompatible-library': 'error',
-    'react-hooks/preserve-manual-memoization': 'error',
-    'react-hooks/purity': 'error',
-    'react-hooks/refs': 'error',
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/set-state-in-effect': 'error',
-    'react-hooks/set-state-in-render': 'error',
-    'react-hooks/static-components': 'error',
-    'react-hooks/unsupported-syntax': 'error',
-    'react-hooks/use-memo': 'error',
   },
 }]);
