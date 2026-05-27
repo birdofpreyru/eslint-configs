@@ -117,5 +117,9 @@ export default defineConfig([{
       allow: 'as-needed',
       extensions: ['.jsx', '.tsx'],
     }],
+
+    // The recommended "react-hooks" config makes it "warn", we prefer it to be
+    // an "error".
+    'react-hooks/exhaustive-deps': 'error',
   },
 }]);
