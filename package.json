@@ -1,6 +1,6 @@
 {
   "name": "@dr.pogodin/eslint-configs",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "description": "ESLint configurations for TypeScript and/or React projects",
   "type": "module",
   "main": "./config/index.js",
@@ -44,9 +44,9 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^7.1.1",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.60.0"
+    "typescript-eslint": "^8.61.0"
   },
   "peerDependencies": {
-    "eslint-import-resolver-typescript": "^4.4.4"
+    "eslint-import-resolver-typescript": "^4.4.5"
   }
 }
