@@ -29,14 +29,14 @@
   },
   "homepage": "https://dr.pogodin.studio/docs/eslint-configs",
   "dependencies": {
-    "@babel/eslint-parser": "^8.0.0",
-    "@babel/eslint-plugin": "^8.0.0",
-    "@babel/preset-env": "^8.0.0",
-    "@babel/preset-react": "^8.0.0",
-    "@babel/preset-typescript": "^8.0.0",
+    "@babel/eslint-parser": "^8.0.1",
+    "@babel/eslint-plugin": "^8.0.1",
+    "@babel/preset-env": "^8.0.1",
+    "@babel/preset-react": "^8.0.1",
+    "@babel/preset-typescript": "^8.0.1",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint": "^10.2.1",
+    "eslint": "^10.5.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jest": "^29.15.2",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -44,7 +44,7 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^7.1.1",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.61.0"
+    "typescript-eslint": "^8.61.1"
   },
   "peerDependencies": {
     "eslint-import-resolver-typescript": "^4.4.5"
