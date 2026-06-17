@@ -165,8 +165,8 @@ Additionally, it applies to all other files matched by any other [ESLint]
 configuration object; and it applies to them the following rule sets:
 
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
-  &mdash; all rules enabled (it has to apply to all files, as hooks do not have
-  to live ony inside JSX or TSX files exclusively).
+  &mdash; the recommended rule set (it has to apply to all files, as hooks do
+  not have to live ony inside JSX or TSX files exclusively).
 
 - the rule that forbids using JSX syntax in files with extensions different from
   `.jsx` or `.tsx`.

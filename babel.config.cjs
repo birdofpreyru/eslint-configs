@@ -6,10 +6,10 @@
 module.exports = {
   presets: [
     ['@babel/env', {
-      modules: 'cjs',
-      targets: 'defaults',
+      modules: false,
     }],
-    ['@babel/react', { runtime: 'automatic' }],
+    '@babel/react',
     '@babel/typescript',
   ],
+  targets: 'defaults',
 };
