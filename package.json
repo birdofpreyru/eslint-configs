@@ -31,7 +31,7 @@
   "dependencies": {
     "@babel/eslint-parser": "^8.0.1",
     "@babel/eslint-plugin": "^8.0.1",
-    "@babel/preset-env": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
     "@babel/preset-react": "^8.0.1",
     "@babel/preset-typescript": "^8.0.1",
     "@eslint/js": "^10.0.1",
@@ -44,7 +44,7 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^7.1.1",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.61.1"
+    "typescript-eslint": "^8.62.0"
   },
   "peerDependencies": {
     "eslint-import-resolver-typescript": "^4.4.5"
