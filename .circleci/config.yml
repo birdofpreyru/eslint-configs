@@ -11,7 +11,7 @@ jobs:
       - restore_cache:
           key: node_modules-{{ checksum "package-lock.json" }}
 
-      # TODO: The --force below is temporary, removed once not needed.
+      # TODO: The "--force" below is temporary, removed once not needed.
       - run: npm install --force
 
       - save_cache:
@@ -23,9 +23,11 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+
+      # TODO: "--tag alpha" is temporary, to be removed in the v0.3.0 release.
       - run: |
           export NPM_ID_TOKEN=$(circleci run oidc get --claims '{"aud": "npm:registry.npmjs.org"}')
-          npm publish --access public
+          npm publish --access public --tag alpha
 workflows:
   version: 2
   build:
