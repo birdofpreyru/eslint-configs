@@ -43,7 +43,10 @@ function newConfig({ noPerf } = {}) {
     '@typescript-eslint/no-extraneous-class': 'error',
     '@typescript-eslint/no-import-type-side-effects': 'error',
     '@typescript-eslint/no-inferrable-types': 'off',
+
+    'no-invalid-this': 'off',
     '@typescript-eslint/no-invalid-this': 'error',
+
     '@typescript-eslint/no-invalid-void-type': 'error',
     '@typescript-eslint/no-loop-func': 'error',
     '@typescript-eslint/no-loss-of-precision': 'error',

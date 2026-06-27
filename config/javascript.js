@@ -25,17 +25,11 @@ export function newJsConfig({
     // These rules are provided by "@babel/eslint-plugin", and they require
     // to disable (to not enable) their counterparts from ESLint core.
     '@babel/new-cap': 'error',
-    '@babel/no-invalid-this': 'error',
 
     'no-undef': 'off',
     '@babel/no-undef': 'error',
 
     '@babel/no-unused-expressions': 'error',
-
-    '@babel/object-curly-spacing': ['error', 'always'],
-    '@stylistic/object-curly-spacing': 'off',
-
-    '@babel/semi': 'error',
 
     // Rules provided by "eslint-plugin-import".
     'import/dynamic-import-chunkname': 'error',
@@ -75,6 +69,7 @@ export function newJsConfig({
     '@stylistic/arrow-parens': ['error', 'always'],
     '@stylistic/brace-style': ['error', '1tbs'],
     '@stylistic/comma-dangle': ['error', 'always-multiline'],
+
     '@stylistic/curly-newline': ['error', {
       consistent: true,
       minElements: 4,
@@ -131,6 +126,7 @@ export function newJsConfig({
       consistent: true,
       minProperties: 4,
     }],
+    '@stylistic/object-curly-spacing': ['error', 'always'],
     '@stylistic/object-property-newline': ['error', {
       allowAllPropertiesOnSameLine: true,
     }],
@@ -194,6 +190,7 @@ export function newJsConfig({
     'no-implicit-globals': 'error',
     'no-implied-eval': 'error',
     'no-inner-declarations': ['error', 'both'],
+    'no-invalid-this': 'error',
     'no-iterator': 'error',
     'no-label-var': 'error',
     'no-labels': 'error',
