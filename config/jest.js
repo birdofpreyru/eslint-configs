@@ -9,6 +9,7 @@ export default defineConfig([{
     pluginJest.configs['flat/style'],
   ],
   rules: {
+    'import/dynamic-import-chunkname': 'off',
     'import/no-extraneous-dependencies': ['error', {
       optionalDependencies: false,
     }],
