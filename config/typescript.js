@@ -48,7 +48,6 @@ function newConfig({ noPerf } = {}) {
     '@typescript-eslint/no-invalid-this': 'error',
 
     '@typescript-eslint/no-invalid-void-type': 'error',
-    '@typescript-eslint/no-loop-func': 'error',
     '@typescript-eslint/no-loss-of-precision': 'error',
     '@typescript-eslint/no-meaningless-void-operator': 'error',
     '@typescript-eslint/no-misused-spread': 'error',
