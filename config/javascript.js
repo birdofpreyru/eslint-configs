@@ -94,6 +94,7 @@ export function newJsConfig({
     '@stylistic/lines-around-comment': ['error', {
       allowBlockStart: true,
       allowClassStart: true,
+      allowEnumStart: true,
       allowObjectStart: true,
       allowTypeStart: true,
     }],
