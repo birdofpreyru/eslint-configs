@@ -73,7 +73,10 @@ function newConfig({ noPerf } = {}) {
     'no-unused-private-class-members': 'off',
     '@typescript-eslint/no-unused-private-class-members': 'error',
 
+    // NOTE: Disables the base rule as it can report incorrect errors.
+    'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': 'error',
+
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-useless-empty-export': 'error',
     '@typescript-eslint/parameter-properties': ['error', {
