@@ -92,6 +92,7 @@ export function newJsConfig({
     '@stylistic/jsx-self-closing-comp': 'error',
     '@stylistic/linebreak-style': 'error',
     '@stylistic/lines-around-comment': ['error', {
+      allowArrayStart: true,
       allowBlockStart: true,
       allowClassStart: true,
       allowEnumStart: true,
