@@ -180,7 +180,7 @@ and it applies to them the following rule sets:
 - Everything from our [`configs.javascript`], with minor necessary overrides.
 
 - [typescript-eslint](https://typescript-eslint.io/rules) &mdash;
-  the `recommendedTypeChecked` and `stylisticTypeChecked` rule sets, with minor
+  the `strictTypeChecked` and `stylisticTypeChecked` rule sets, with minor
   overrides, and many additional rules enabled.
 
 ### `configs.typescriptNoPerf`
