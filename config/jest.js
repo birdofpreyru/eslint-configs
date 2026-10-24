@@ -15,7 +15,6 @@ export default defineConfig([{
     }],
 
     'jest/max-nested-describe': 'error',
-    'jest/no-conditional-in-test': 'error',
     'jest/no-confusing-set-timeout': 'error',
     'jest/no-duplicate-hooks': 'error',
     'jest/no-test-return-statement': 'error',
