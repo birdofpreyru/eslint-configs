@@ -78,6 +78,9 @@ function newConfig({ noPerf } = {}) {
     '@typescript-eslint/prefer-regexp-exec': 'off',
     '@typescript-eslint/promise-function-async': 'error',
     '@typescript-eslint/require-array-sort-compare': 'error',
+    '@typescript-eslint/restrict-template-expressions': ['error', {
+      allowNumber: true,
+    }],
     '@typescript-eslint/strict-void-return': 'error',
     '@typescript-eslint/switch-exhaustiveness-check': 'error',
     '@typescript-eslint/typedef': 'error',
