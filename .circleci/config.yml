@@ -23,11 +23,10 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-
-      # TODO: "--tag alpha" is temporary, to be removed in the v0.3.0 release.
       - run: |
           export NPM_ID_TOKEN=$(circleci run oidc get --claims '{"aud": "npm:registry.npmjs.org"}')
           npm publish --access public
+
 workflows:
   version: 2
   build:
