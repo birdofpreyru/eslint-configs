@@ -102,14 +102,10 @@ export function newJsConfig({
         minItems: 1,
       },
       overrides: {
-        '[]': {
-          singleLine: {
-            maxItems: Number.POSITIVE_INFINITY,
-          },
-        },
+        '{}': { singleLine: { maxItems: 3, spacing: 'always' } },
       },
       singleLine: {
-        maxItems: 3,
+        maxItems: Number.POSITIVE_INFINITY,
         spacing: 'never',
       },
     }],
