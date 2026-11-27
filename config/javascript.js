@@ -64,8 +64,6 @@ export function newJsConfig({
     // These rules are provided by "@stylistic/eslint-plugin",
     // and (re-)configured for our taste, somewhat differently from
     // defaults of "@stylistic/recommended".
-    '@stylistic/array-bracket-newline': ['error', 'consistent'],
-    '@stylistic/array-element-newline': ['error', 'consistent'],
     '@stylistic/arrow-parens': ['error', 'always'],
     '@stylistic/brace-style': ['error', '1tbs'],
     '@stylistic/comma-dangle': ['error', 'always-multiline'],
@@ -75,9 +73,7 @@ export function newJsConfig({
       minElements: 4,
     }],
     '@stylistic/dot-location': ['error', 'property'],
-    '@stylistic/function-call-argument-newline': ['error', 'consistent'],
     '@stylistic/function-call-spacing': 'error',
-    '@stylistic/function-paren-newline': ['error', 'multiline-arguments'],
     '@stylistic/implicit-arrow-linebreak': 'error',
     '@stylistic/indent': ['error', 2, {
       SwitchCase: 1,
@@ -99,6 +95,25 @@ export function newJsConfig({
       allowObjectStart: true,
       allowTypeStart: true,
     }],
+
+    '@stylistic/list-style': ['error', {
+      empty: 'never',
+      multiLine: {
+        minItems: 1,
+      },
+      overrides: {
+        '[]': {
+          singleLine: {
+            maxItems: Number.POSITIVE_INFINITY,
+          },
+        },
+      },
+      singleLine: {
+        maxItems: 3,
+        spacing: 'never',
+      },
+    }],
+
     '@stylistic/max-len': ['error', {
       ignoreComments: true,
       ignoreStrings: true,
@@ -124,14 +139,6 @@ export function newJsConfig({
     '@stylistic/no-extra-semi': 'error',
     '@stylistic/no-multiple-empty-lines': ['error', { max: 1 }],
     '@stylistic/nonblock-statement-body-position': 'error',
-    '@stylistic/object-curly-newline': ['error', {
-      consistent: true,
-      minProperties: 4,
-    }],
-    '@stylistic/object-curly-spacing': ['error', 'always'],
-    '@stylistic/object-property-newline': ['error', {
-      allowAllPropertiesOnSameLine: true,
-    }],
     '@stylistic/one-var-declaration-per-line': 'error',
     '@stylistic/operator-linebreak': ['error', 'before'],
     '@stylistic/padded-blocks': ['error', 'never'],
